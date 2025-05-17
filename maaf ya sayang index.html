@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maaf Sayangku</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #ffe1f0, #c9eaff);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .stars::before {
+      content: "";
+      position: absolute;
+      top: -200%;
+      left: -200%;
+      width: 500%;
+      height: 500%;
+      background: url('https://cdn.pixabay.com/photo/2013/07/12/17/18/stars-152068_1280.png');
+      background-size: cover;
+      opacity: 0.08;
+      animation: rotateStars 90s linear infinite;
+    }
+
+    @keyframes rotateStars {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 60px;
+      color: #ff69b4;
+      margin-bottom: 10px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .heart {
+      font-size: 60px;
+      color: red;
+      animation: pulse 1.5s infinite;
+    }
+
+    #message {
+      font-size: 20px;
+      color: #333;
+      max-width: 600px;
+      background: rgba(255,255,255,0.7);
+      padding: 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+      animation: fadeInUp 2s ease forwards;
+      transition: all 0.5s ease;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: #ff69b4;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff1493;
+      transform: scale(1.05);
+    }
+
+    #surpriseImage {
+      display: none;
+      margin-top: 30px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    #surpriseImage img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+    }
+
+    #boongText {
+      display: none;
+      font-size: 36px;
+      font-weight: bold;
+      color: crimson;
+      margin-top: 30px;
+      animation: boom 1s ease forwards;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
+      to { text-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes boom {
+      from { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+      to { opacity: 1; transform: scale(1.2) rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <h1>Maaf Cintaku</h1>
+    <div class="heart">♥</div>
+    <div id="message">
+      Aku tahu mungkin aku telah menyakitimu...  
+      Tapi dari lubuk hatiku yang paling dalam, aku benar-benar minta maaf.
+      Aku tak ingin kehilanganmu, kamu sangat berarti dalam hidupku.  
+      Tolong beri aku kesempatan untuk memperbaiki semuanya.
+    </div>
+    <button class="btn" onclick="revealSurprise()">Peluk Aku</button>
+
+    <div id="surpriseImage">
+      <img src="https://i.imgur.com/YeQkCRz.jpeg" alt="Foto kejutan">
+    </div>
+    
+    <div id="boongText">TAPI BOONG HEHE!!</div>
+  </div>
+
+  <script>
+    function revealSurprise() {
+      document.getElementById("message").style.display = "none";
+      document.getElementById("surpriseImage").style.display = "block";
+      document.getElementById("boongText").style.display = "block";
+    }
+  </script>
+</body>
+</html>
